@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Icarus\Data.csproj", "{7752F4C0-673D-4000-B22F-1A88CBBCD65C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{F7643455-F6FA-4450-BB59-E9ECD37099CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeskApp", "DeskApp\DeskApp.csproj", "{FFECB231-A026-47A3-974E-5D0E271F49FF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7752F4C0-673D-4000-B22F-1A88CBBCD65C} = {7752F4C0-673D-4000-B22F-1A88CBBCD65C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7752F4C0-673D-4000-B22F-1A88CBBCD65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7752F4C0-673D-4000-B22F-1A88CBBCD65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7752F4C0-673D-4000-B22F-1A88CBBCD65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7752F4C0-673D-4000-B22F-1A88CBBCD65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFECB231-A026-47A3-974E-5D0E271F49FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFECB231-A026-47A3-974E-5D0E271F49FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFECB231-A026-47A3-974E-5D0E271F49FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFECB231-A026-47A3-974E-5D0E271F49FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4ACB1699-8669-4BCC-922F-F3990F57A70B}
+	EndGlobalSection
+EndGlobal

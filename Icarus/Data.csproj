@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+    <AssemblyName>Icarus.Data</AssemblyName>
+    <RootNamespace>Icarus.Data</RootNamespace>
+  </PropertyGroup>
+
+</Project>
