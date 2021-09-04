@@ -34,8 +34,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="60*"/>
-            <RowDefinition Height="100*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="100*"/>
@@ -46,27 +46,31 @@
 
         <TextBlock Name="SkuHeader" Grid.Column="0" Grid.Row="2">Sku:</TextBlock>
         <TextBox Name="SkuBox" Grid.Column="1" Grid.Row="2" MaxLength="7" MaxLines="1" TextChanged="SkuBox_KeyChange"/>
+        <TextBlock Name="NameHeader" Grid.Column="0" Grid.Row="3">Name:</TextBlock>
+        <TextBox Name="NameBox" Grid.Column="1" Grid.Row="3" MaxLength="7" MaxLines="1"/>
 
         <TextBlock Background="LightSteelBlue" Grid.Column="6" Grid.Row="1" Foreground="Black" TextAlignment="Center" FontSize="30">Sku</TextBlock>
         <TextBlock Background="LightSteelBlue" Grid.Column="7" Grid.Row="1" Foreground="Black" TextAlignment="Center" FontSize="30">Name</TextBlock>
-        <ListView Name="ItemListView" Grid.Row="2" Grid.Column="6" Grid.RowSpan="6" Grid.ColumnSpan="2">
-            <DataTemplate>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Sku}"/>
-                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Name}"/>
-                </Grid>
-            </DataTemplate>
+        <ListView Name="ItemListView" Grid.Row="2" Grid.Column="6" Grid.RowSpan="6" Grid.ColumnSpan="2" ItemsSource="{Binding}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Path=Sku}" Foreground="Black"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Name}" Foreground="Black"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
-        <Button Name="NewItemButton" Grid.Column="0" Grid.Row="9" Click="NewItemButton_Click">New Item</Button>
-        <Button Name="AddItemButton" Grid.Column="1" Grid.Row="9" Click="AddItemButton_Click">Add Item</Button>
-        <Button Name="DeleteItemButton" Grid.Column="2" Grid.Row="9" Click="DeleteItemButton_Click">Delete Item</Button>
+        <Button Name="NewItemButton" Grid.Column="0" Grid.Row="10" Click="NewItemButton_Click">New Item</Button>
+        <Button Name="AddItemButton" Grid.Column="1" Grid.Row="10" Click="AddItemButton_Click">Add Item</Button>
+        <Button Name="DeleteItemButton" Grid.Column="2" Grid.Row="10" Click="DeleteItemButton_Click">Delete Item</Button>
     </Grid>
 </UserControl>

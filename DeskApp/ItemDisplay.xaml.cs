@@ -20,12 +20,20 @@ namespace DeskApp
     /// </summary>
     public partial class ItemDisplay : UserControl
     {
-        private Item thisItem = new Item();
+        private List<Item> thisList = new List<Item>();
 
         public ItemDisplay()
         {
             InitializeComponent();
-            this.DataContext = new List<Item>();
+            PopulateList();
+        }
+
+        private void PopulateList()
+        {
+            foreach(Item item in thisList)
+            {
+                this.DataContext = item;
+            }
         }
 
         private void SkuBox_KeyChange(object sender, TextChangedEventArgs e)
@@ -39,25 +47,32 @@ namespace DeskApp
         
         }
 
-        private void PopulateFields()
+        private void PopulateFields(Item thisItem)
         {
             SkuBox.Text = thisItem.Sku.ToString();
+            NameBox.Text = thisItem.Name;
         }
 
-        private void PopulateItem()
+        private Item PopulateItem()
         {
+            Item thisItem = new Item();
+
             thisItem.Sku = Int32.Parse(SkuBox.Text);
+            thisItem.Name = NameBox.Text;
+
+            return thisItem;
         }
 
         private void NewItemButton_Click(object sender, RoutedEventArgs e)
         {
-            thisItem = new Item();
-            PopulateFields();
+            Item thisItem = new Item();
+            PopulateFields(thisItem);
         }
 
         private void AddItemButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            Item thisItem = PopulateItem();
+            this.DataContext = thisItem;
         }
 
         private void DeleteItemButton_Click(object sender, RoutedEventArgs e)
