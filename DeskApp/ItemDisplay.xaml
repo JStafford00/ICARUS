@@ -17,6 +17,10 @@
             <Setter Property="FontSize" Value="40"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
+
+        <Style TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
     </UserControl.Resources>
 
     <Grid Background="DimGray">
@@ -49,10 +53,10 @@
         <TextBlock Name="NameHeader" Grid.Column="0" Grid.Row="3">Name:</TextBlock>
         <TextBox Name="NameBox" Grid.Column="1" Grid.Row="3" MaxLength="7" MaxLines="1"/>
 
-        <TextBlock Background="LightSteelBlue" Grid.Column="6" Grid.Row="1" Foreground="Black" TextAlignment="Center" FontSize="30">Sku</TextBlock>
-        <TextBlock Background="LightSteelBlue" Grid.Column="7" Grid.Row="1" Foreground="Black" TextAlignment="Center" FontSize="30">Name</TextBlock>
-        <ListView Name="ItemListView" Grid.Row="2" Grid.Column="6" Grid.RowSpan="6" Grid.ColumnSpan="2" ItemsSource="{Binding}">
-            <ListView.ItemTemplate>
+        <TextBlock Background="LightSteelBlue" Grid.Column="6" Grid.Row="1" Foreground="Black" FontSize="30">Sku</TextBlock>
+        <TextBlock Background="LightSteelBlue" Grid.Column="7" Grid.Row="1" Foreground="Black" FontSize="30">Name</TextBlock>
+        <ListBox Name="ItemListView" Grid.Row="2" Grid.Column="6" Grid.RowSpan="6" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Items}">
+            <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -66,11 +70,11 @@
                         <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Name}" Foreground="Black"/>
                     </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <Button Name="NewItemButton" Grid.Column="0" Grid.Row="10" Click="NewItemButton_Click">New Item</Button>
-        <Button Name="AddItemButton" Grid.Column="1" Grid.Row="10" Click="AddItemButton_Click">Add Item</Button>
+        <Button Name="AddItemButton" Grid.Column="1" Grid.Row="10" Click="AddItemButton_Click" IsEnabled="False">Add Item</Button>
         <Button Name="DeleteItemButton" Grid.Column="2" Grid.Row="10" Click="DeleteItemButton_Click">Delete Item</Button>
     </Grid>
 </UserControl>

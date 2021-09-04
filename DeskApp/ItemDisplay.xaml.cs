@@ -20,7 +20,7 @@ namespace DeskApp
     /// </summary>
     public partial class ItemDisplay : UserControl
     {
-        private List<Item> thisList = new List<Item>();
+        private Catalog thisCatalog = new Catalog();
 
         public ItemDisplay()
         {
@@ -30,10 +30,7 @@ namespace DeskApp
 
         private void PopulateList()
         {
-            foreach(Item item in thisList)
-            {
-                this.DataContext = item;
-            }
+            this.DataContext = thisCatalog;
         }
 
         private void SkuBox_KeyChange(object sender, TextChangedEventArgs e)
@@ -44,7 +41,12 @@ namespace DeskApp
                 s = Regex.Replace(s, "[^0-9]", "");
                 ((TextBox)e.Source).Text = s;
             }
-        
+
+            if(SkuBox.Text.Length != 7 && NameBox.Text.Length < 5)
+                AddItemButton.IsEnabled = false;
+            else
+                AddItemButton.IsEnabled = true;
+
         }
 
         private void PopulateFields(Item thisItem)
@@ -71,8 +73,10 @@ namespace DeskApp
 
         private void AddItemButton_Click(object sender, RoutedEventArgs e)
         {
+
             Item thisItem = PopulateItem();
-            this.DataContext = thisItem;
+            thisCatalog.Add(thisItem);
+            this.DataContext = thisCatalog;
         }
 
         private void DeleteItemButton_Click(object sender, RoutedEventArgs e)
