@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 using Icarus.Data;
 using Newtonsoft.Json;
 
@@ -31,6 +32,11 @@ namespace DeskApp
 
         private void PopulateList()
         {
+            string json = File.ReadAllText(@"C:\Users\JStaf\source\repos\Icarus\Documents\Items.json");
+            
+            if(json != "")
+                thisCatalog.SetList(JsonConvert.DeserializeObject<List<Item>>(json));
+
             this.DataContext = thisCatalog;
         }
 
@@ -82,12 +88,19 @@ namespace DeskApp
 
         private void DeleteItemButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if(ItemListView.SelectedItem != null)
+            {
+                Item item = (Item)ItemListView.SelectedItem;
+                thisCatalog.Remove(item);
+                this.DataContext = thisCatalog;
+            }
         }
 
         private void SubmitListButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            string json = JsonConvert.SerializeObject(thisCatalog.GetList(), Formatting.Indented);
+
+            File.WriteAllText(@"C:\Users\JStaf\source\repos\Icarus\Documents\Items.json", json);
         }
     }
 }

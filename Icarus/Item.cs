@@ -24,9 +24,7 @@ namespace Icarus.Data
         private List<string> locationStocked;
         private int departmentID;
         private string departmentName;
-        private string departmentGroup;
         private string catagory;
-        private string subcatagory;
         private List<string> vendors;
 
         /// <summary>
@@ -238,22 +236,6 @@ namespace Icarus.Data
         }
 
         /// <summary>
-        /// Department Group
-        /// </summary>
-        public string DepartmentGroup
-        {
-            get
-            {
-                return departmentGroup;
-            }
-
-            set
-            {
-                departmentGroup = value;
-            }
-        }
-
-        /// <summary>
         /// Department Caragory
         /// </summary>
         public string Catagory
@@ -266,22 +248,6 @@ namespace Icarus.Data
             set
             {
                 catagory = value;
-            }
-        }
-
-        /// <summary>
-        /// Department Subcatagory.
-        /// </summary>
-        public string Subcatagory
-        {
-            get
-            {
-                return subcatagory;
-            }
-
-            set
-            {
-                subcatagory = value;
             }
         }
 

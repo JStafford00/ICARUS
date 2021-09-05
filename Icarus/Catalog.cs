@@ -37,12 +37,35 @@ namespace Icarus.Data
         }
 
         /// <summary>
+        /// Removes item from item list
+        /// </summary>
+        /// <param name="item"></param>
+        public  void Remove(Item item)
+        {
+            if(item is INotifyPropertyChanged notifier)
+                notifier.PropertyChanged += OnItemPropertyChange;
+
+            items.Remove(item);
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+        }
+
+        /// <summary>
         /// Returns the list of items
         /// </summary>
         /// <returns></returns>
         public List<Item> GetList()
         {
             return items;
+        }
+
+        /// <summary>
+        /// Sets the list
+        /// </summary>
+        /// <param name="list"></param>
+        public void SetList(List<Item> list)
+        {
+            items = list;
         }
 
         /// <summary>

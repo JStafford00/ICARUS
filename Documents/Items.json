@@ -1,0 +1,53 @@
+[
+  {
+    "Sku": 2365475,
+    "Name": "Sup",
+    "OverallQuantity": 0,
+    "SalesFloorQuantity": 0,
+    "OverstockQuantity": 0,
+    "PrepaidQuantity": 0,
+    "MaxSalesFloor": 0,
+    "DateRecieved": "0001-01-01T00:00:00",
+    "DateInventoried": "0001-01-01T00:00:00",
+    "InventoriedTeamMember": null,
+    "LocationStocked": null,
+    "DepartmentID": 0,
+    "DepartmentName": null,
+    "Catagory": null,
+    "Vendors": null
+  },
+  {
+    "Sku": 4564564,
+    "Name": "Totes",
+    "OverallQuantity": 0,
+    "SalesFloorQuantity": 0,
+    "OverstockQuantity": 0,
+    "PrepaidQuantity": 0,
+    "MaxSalesFloor": 0,
+    "DateRecieved": "0001-01-01T00:00:00",
+    "DateInventoried": "0001-01-01T00:00:00",
+    "InventoriedTeamMember": null,
+    "LocationStocked": null,
+    "DepartmentID": 0,
+    "DepartmentName": null,
+    "Catagory": null,
+    "Vendors": null
+  },
+  {
+    "Sku": 8765654,
+    "Name": "Yuppers",
+    "OverallQuantity": 0,
+    "SalesFloorQuantity": 0,
+    "OverstockQuantity": 0,
+    "PrepaidQuantity": 0,
+    "MaxSalesFloor": 0,
+    "DateRecieved": "0001-01-01T00:00:00",
+    "DateInventoried": "0001-01-01T00:00:00",
+    "InventoriedTeamMember": null,
+    "LocationStocked": null,
+    "DepartmentID": 0,
+    "DepartmentName": null,
+    "Catagory": null,
+    "Vendors": null
+  }
+]

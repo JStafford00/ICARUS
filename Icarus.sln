@@ -6,8 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Icarus\Data.csproj", "{7752F4C0-673D-4000-B22F-1A88CBBCD65C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{F7643455-F6FA-4450-BB59-E9ECD37099CB}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Items.json = Documents\Items.json
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeskApp", "DeskApp\DeskApp.csproj", "{FFECB231-A026-47A3-974E-5D0E271F49FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskApp", "DeskApp\DeskApp.csproj", "{FFECB231-A026-47A3-974E-5D0E271F49FF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7752F4C0-673D-4000-B22F-1A88CBBCD65C} = {7752F4C0-673D-4000-B22F-1A88CBBCD65C}
 	EndProjectSection
