@@ -75,6 +75,11 @@
 
         <Button Name="NewItemButton" Grid.Column="0" Grid.Row="10" Click="NewItemButton_Click">New Item</Button>
         <Button Name="AddItemButton" Grid.Column="1" Grid.Row="10" Click="AddItemButton_Click" IsEnabled="False">Add Item</Button>
-        <Button Name="DeleteItemButton" Grid.Column="2" Grid.Row="10" Click="DeleteItemButton_Click">Delete Item</Button>
+        <Button Name="DeleteItemButton" Grid.Column="2" Grid.Row="10" Click="DeleteItemButton_Click">
+            <TextBlock Text="Delete Item" Foreground="Black" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+        <Button x:Name="SubmitListButton" Grid.Column="3" Grid.Row="10" Click="SubmitListButton_Click">
+            <TextBlock Text="Submit List" Foreground="Black" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
     </Grid>
 </UserControl>

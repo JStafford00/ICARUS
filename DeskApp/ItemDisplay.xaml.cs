@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Icarus.Data;
+using Newtonsoft.Json;
 
 namespace DeskApp
 {
@@ -82,6 +83,11 @@ namespace DeskApp
         private void DeleteItemButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void SubmitListButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
