@@ -1,16 +1,16 @@
-﻿/*
- *  Author: Jordan Stafford
- *  Class: Catalog
- *  Purpose: Holds all items in the catalog.
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 
 namespace Icarus.Data
 {
+
+    /*
+     *  Author: Jordan Stafford
+     *  Class: Catalog
+     *  Purpose: Holds all items in the catalog.
+     */
     public class Catalog : INotifyPropertyChanged
     {
         private List<Item> items = new List<Item>();

@@ -27,6 +27,14 @@ namespace Icarus.Data
         private string catagory;
         private List<string> vendors;
 
+        public Item()
+        {
+            dateRecieved = new DateTime();
+            dateInventoried = new DateTime();
+            locationStocked = new List<string>();
+            vendors = new List<string>();
+        }
+
         /// <summary>
         /// Sku number for an item.
         /// </summary>
