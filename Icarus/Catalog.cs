@@ -51,6 +51,23 @@ namespace Icarus.Data
         }
 
         /// <summary>
+        /// Edits an existing item in the catalog
+        /// </summary>
+        /// <param name="oldItem"></param>
+        /// <param name="newItem"></param>
+        public void Edit(Item oldItem, Item newItem)
+        {
+            if(newItem is INotifyPropertyChanged notifier)
+                notifier.PropertyChanged += OnItemPropertyChange;
+
+            items.Remove(oldItem);
+            items.Add(newItem);
+            items.Sort((x, y) => x.Sku.CompareTo(y.Sku));
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+        }
+
+        /// <summary>
         /// Returns the list of items
         /// </summary>
         /// <returns></returns>

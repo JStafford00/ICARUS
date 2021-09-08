@@ -1,5 +1,28 @@
 [
   {
+    "Sku": 1854687,
+    "Name": "3/4 4x8 Plywood",
+    "OverallQuantity": 0,
+    "SalesFloorQuantity": 4758,
+    "OverstockQuantity": 720,
+    "PrepaidQuantity": 352,
+    "MaxSalesFloor": 5000,
+    "DateRecieved": "2021-09-08T08:26:12.3865576-05:00",
+    "DateInventoried": "2021-09-08T08:26:12.3865823-05:00",
+    "InventoriedTeamMember": "Jordan S",
+    "LocationStocked": [
+      "Generic Plywood Co",
+      "Red Harvest Inc"
+    ],
+    "DepartmentID": 100,
+    "DepartmentName": "Building Supplies",
+    "Catagory": "Plywood",
+    "Vendors": [
+      "Generic Plywood Co",
+      "Red Harvest Inc"
+    ]
+  },
+  {
     "Sku": 1895161,
     "Name": "Concrete Mix",
     "OverallQuantity": 0,
@@ -30,14 +53,18 @@
     "OverstockQuantity": 10,
     "PrepaidQuantity": 1,
     "MaxSalesFloor": 5,
-    "DateRecieved": "2021-09-07T07:18:56.1979139-05:00",
-    "DateInventoried": "2021-09-07T07:18:56.1979165-05:00",
+    "DateRecieved": "2021-09-08T07:34:11.1701995-05:00",
+    "DateInventoried": "2021-09-08T07:34:11.17022-05:00",
     "InventoriedTeamMember": "Jordan S",
-    "LocationStocked": null,
+    "LocationStocked": [
+      "Generators R Us"
+    ],
     "DepartmentID": 700,
     "DepartmentName": "Electrical",
     "Catagory": "Generators",
-    "Vendors": null
+    "Vendors": [
+      "Generators R Us"
+    ]
   },
   {
     "Sku": 7875554,
@@ -47,13 +74,19 @@
     "OverstockQuantity": 0,
     "PrepaidQuantity": 0,
     "MaxSalesFloor": 16,
-    "DateRecieved": "2021-09-07T07:20:44.4266706-05:00",
-    "DateInventoried": "2021-09-07T07:20:44.426674-05:00",
+    "DateRecieved": "2021-09-08T07:35:09.7187369-05:00",
+    "DateInventoried": "2021-09-08T07:35:09.718749-05:00",
     "InventoriedTeamMember": "Jordan S",
-    "LocationStocked": null,
+    "LocationStocked": [
+      "Painters Premium",
+      "Jose's Paint"
+    ],
     "DepartmentID": 500,
     "DepartmentName": "Paint",
     "Catagory": "Paint",
-    "Vendors": null
+    "Vendors": [
+      "Painters Premium",
+      "Jose's Paint"
+    ]
   }
 ]

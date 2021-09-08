@@ -73,9 +73,9 @@
         <TextBlock Name="LocationHeader" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center">Location:</TextBlock>
         <TextBox Name="LocationBox" Grid.Column="4" Grid.Row="5" MaxLines="5" MaxLength="5" Height="30" VerticalContentAlignment="Center" FontSize="20" TextChanged="NumTextBox_KeyChange" AcceptsReturn="True"/>
         <TextBlock Name="RecievedHeader" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center">Recieved:</TextBlock>
-        <TextBox Name="RecievedBox" Grid.Column="4" Grid.Row="6" MaxLines="1"  Height="30" VerticalContentAlignment="Center" FontSize="20"/>
+        <TextBox Name="RecievedBox" Grid.Column="4" Grid.Row="6" MaxLines="1"  Height="30" VerticalContentAlignment="Center" FontSize="20" IsEnabled="False"/>
         <TextBlock Name="InventoriedHeader" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center">Inventoried:</TextBlock>
-        <TextBox Name="InventoriedBox" Grid.Column="4" Grid.Row="7" MaxLines="1" MaxLength="3" Height="30" VerticalContentAlignment="Center" FontSize="20"/>
+        <TextBox Name="InventoriedBox" Grid.Column="4" Grid.Row="7" MaxLines="1" MaxLength="3" Height="30" VerticalContentAlignment="Center" FontSize="20" IsEnabled="False"/>
         <TextBlock Name="InventByHeader" Grid.Column="3" Grid.Row="8" VerticalAlignment="Center">Invent By:</TextBlock>
         <TextBox Name="InventByBox" Grid.Column="4" Grid.Row="8" MaxLines="1" MaxLength="20" Height="30" VerticalContentAlignment="Center" FontSize="20" KeyDown="TextOnlyBox_KeyPress"/>
         
@@ -102,7 +102,8 @@
 
         <Button Name="NewItemButton" Grid.Column="0" Grid.Row="10" Click="NewItemButton_Click">New Item</Button>
         <Button Name="AddItemButton" Grid.Column="1" Grid.Row="10" Click="AddItemButton_Click" IsEnabled="False">Add Item</Button>
-        <Button Name="DeleteItemButton" Grid.Column="2" Grid.Row="10" Click="DeleteItemButton_Click">Delete Item</Button>
-        <Button x:Name="SubmitListButton" Grid.Column="3" Grid.Row="10" Click="SubmitListButton_Click">Submit List</Button>
+        <Button Name="EditItemButton" Grid.Column="2" Grid.Row="10" Click="EditItemButton_Click" IsEnabled="False"> Edit Item</Button>
+        <Button Name="DeleteItemButton" Grid.Column="3" Grid.Row="10" Click="DeleteItemButton_Click">Delete Item</Button>
+        <Button x:Name="SubmitListButton" Grid.Column="4" Grid.Row="10" Click="SubmitListButton_Click" IsEnabled="False">Submit List</Button>
     </Grid>
 </UserControl>
