@@ -2,5 +2,6 @@ ICARUS (Item Catalog and Repository User Software) is an open source project tha
 
 Original Author: Jordan Stafford
 
-Releases: 
+Releases:
+
 1.0.0: Released the original Item Display Screen.
