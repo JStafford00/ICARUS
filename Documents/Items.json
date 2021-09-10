@@ -7,12 +7,11 @@
     "OverstockQuantity": 720,
     "PrepaidQuantity": 352,
     "MaxSalesFloor": 5000,
-    "DateRecieved": "2021-09-08T08:26:12.3865576-05:00",
-    "DateInventoried": "2021-09-08T08:26:12.3865823-05:00",
+    "DateRecieved": "2021-09-10T10:15:12.7366198-05:00",
+    "DateInventoried": "2021-09-08T08:26:00",
     "InventoriedTeamMember": "Jordan S",
     "LocationStocked": [
-      "Generic Plywood Co",
-      "Red Harvest Inc"
+      "100E"
     ],
     "DepartmentID": 100,
     "DepartmentName": "Building Supplies",
@@ -30,12 +29,11 @@
     "OverstockQuantity": 0,
     "PrepaidQuantity": 86,
     "MaxSalesFloor": 1000,
-    "DateRecieved": "2021-09-07T09:20:04.5949461-05:00",
-    "DateInventoried": "2021-09-07T09:20:04.5949743-05:00",
+    "DateRecieved": "2021-09-10T10:15:45.5124481-05:00",
+    "DateInventoried": "2021-09-07T09:20:00",
     "InventoriedTeamMember": "Jordan S",
     "LocationStocked": [
-      "Joe's Concrete",
-      "Sue's Cement"
+      "8B"
     ],
     "DepartmentID": 201,
     "DepartmentName": "Garden Center",
@@ -53,11 +51,11 @@
     "OverstockQuantity": 10,
     "PrepaidQuantity": 1,
     "MaxSalesFloor": 5,
-    "DateRecieved": "2021-09-08T07:34:11.1701995-05:00",
-    "DateInventoried": "2021-09-08T07:34:11.17022-05:00",
+    "DateRecieved": "2021-09-10T10:16:14.4536891-05:00",
+    "DateInventoried": "2021-09-08T07:34:00",
     "InventoriedTeamMember": "Jordan S",
     "LocationStocked": [
-      "Generators R Us"
+      "20G"
     ],
     "DepartmentID": 700,
     "DepartmentName": "Electrical",
@@ -74,12 +72,11 @@
     "OverstockQuantity": 0,
     "PrepaidQuantity": 0,
     "MaxSalesFloor": 16,
-    "DateRecieved": "2021-09-08T07:35:09.7187369-05:00",
-    "DateInventoried": "2021-09-08T07:35:09.718749-05:00",
+    "DateRecieved": "2021-09-10T10:16:46.3362465-05:00",
+    "DateInventoried": "2021-09-08T07:35:00",
     "InventoriedTeamMember": "Jordan S",
     "LocationStocked": [
-      "Painters Premium",
-      "Jose's Paint"
+      "4C"
     ],
     "DepartmentID": 500,
     "DepartmentName": "Paint",

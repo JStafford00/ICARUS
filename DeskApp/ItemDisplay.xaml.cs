@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Icarus.Data;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace DeskApp
 {
@@ -25,11 +26,14 @@ namespace DeskApp
     public partial class ItemDisplay : UserControl
     {
         private Catalog thisCatalog = new Catalog();
+        private List<Aisle> aisleList = new List<Aisle>();
+        private object prevListviewItem;
 
         public ItemDisplay()
         {
             InitializeComponent();
             PopulateList();
+            PopulateAisleList();
         }
 
         /// <summary>
@@ -58,6 +62,20 @@ namespace DeskApp
             }
         }
 
+        private void PopulateAisleList()
+        {
+            string[] aisleArray = File.ReadAllLines(@"C:\Users\Admin\source\repos\Icarus\Documents\AisleList.txt");
+
+            foreach(string line in aisleArray)
+            {
+                Aisle aisle = new Aisle();
+                aisle.AisleName = line;
+                aisleList.Add(aisle);
+            }
+
+            LocationBox.ItemsSource = aisleList;
+        }
+
         /// <summary>
         /// Checks to see if fields have the minimal values to add to list
         /// </summary>
@@ -77,6 +95,7 @@ namespace DeskApp
         private void NumOnlyBox_KeyChange(object sender, TextChangedEventArgs e)
         {
             string s = ((TextBox)e.Source).Text;
+
             if(s != "")
             {
                 string t = s;
@@ -290,88 +309,6 @@ namespace DeskApp
             }
         }
 
-        private void LocationTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(((TextBox)e.Source).Text != "")
-            {
-
-                int i = (int)e.Key;
-                e.Handled = !((i >= ((int)Key.D0) && i <= ((int)Key.Z)) || (i >= (int)Key.NumPad0 && i <= ((int)Key.NumPad9)));
-
-                using(StringReader reader = new StringReader(((TextBox)e.Source).Text))
-                {
-                    string line = "";
-
-                    do
-                    {
-                        line = reader.ReadLine();
-
-                        if(line != null)
-                        {
-                            if(line.Length > 19)
-                            {
-                                e.Handled = true;
-                            }
-                        }
-
-                    } while(line != null);
-                }
-            }
-        }
-
-        private void LocationTextBox_KeyChange(object sender, TextChangedEventArgs e)
-        {
-            TextChange[] o = new TextChange[1];
-            e.Changes.CopyTo(o, 0);
-            int cursorPos = ((TextBox)e.Source).SelectionStart;
-            string s = ((TextBox)e.Source).Text;
-            List<string> thisList = new List<string>();
-
-            if(((TextBox)e.Source).Text != "")
-            {
-                using(StringReader reader = new StringReader(((TextBox)e.Source).Text))
-                {
-                    string line = "";
-
-                    do
-                    {
-                        line = reader.ReadLine();
-
-                        if(line != null)
-                        {
-                            if(line.Length > 4)
-                            {
-                                StringBuilder sb = new StringBuilder(((TextBox)e.Source).Text);
-                                sb.Remove(o[0].Offset, o[0].AddedLength);
-                                ((TextBox)e.Source).Text = sb.ToString();
-                                ((TextBox)e.Source).SelectionStart = cursorPos - (s.Length - sb.ToString().Length);
-                            }
-
-                            else if(line != "")
-                            {
-
-                                string t = "";
-
-                                foreach(char c in line)
-                                {
-                                    if(((int)c >= 48 && (int)c <= 57) || ((int)c >= 65 && (int)c <= 90))
-                                    {
-                                        t += c;
-                                    }
-                                }
-
-                                if(t != "")
-                                    thisList.Add(t);
-                            }
-                        }
-
-                    } while(line != null);
-                }
-
-
-            }
-        }
-
         /// <summary>
         /// Populates the textboxes in ItemDisplay.xaml
         /// </summary>
@@ -384,6 +321,7 @@ namespace DeskApp
             DeptIDBox.Text = thisItem.DepartmentID.ToString();
             CataBox.Text = thisItem.Catagory;
             PopulateVendorBox(thisItem.Vendors);
+            PopulateLocationBox(thisItem.LocationStocked);
             SFBox.Text = thisItem.SalesFloorQuantity.ToString();
             MaxBox.Text = thisItem.MaxSalesFloor.ToString();
             OSBox.Text = thisItem.OverstockQuantity.ToString();
@@ -412,7 +350,7 @@ namespace DeskApp
             thisItem.MaxSalesFloor = Int32.Parse(MaxBox.Text);
             thisItem.OverstockQuantity = Int32.Parse(OSBox.Text);
             thisItem.PrepaidQuantity = Int32.Parse(PrePaidBox.Text);
-            thisItem.LocationStocked = PopulateVendorItem();
+            thisItem.LocationStocked = PopulateLocationItem();
             thisItem.DateRecieved = DateTime.Now;
             thisItem.DateInventoried = Convert.ToDateTime(InventoriedBox.Text);
             thisItem.InventoriedTeamMember = InventByBox.Text;
@@ -473,6 +411,61 @@ namespace DeskApp
                         VendorBox.Text += line + Environment.NewLine;
                     else
                         VendorBox.Text += line;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Populates the Location Item when saving
+        /// </summary>
+        /// <returns></returns>
+        private List<string> PopulateLocationItem()
+        {
+            List<string> thisList = new List<string>();
+
+            if(LocationBox.Text != "")
+            {
+                using(StringReader reader = new StringReader(LocationBox.Text))
+                {
+                    string line = "";
+
+                    do
+                    {
+                        line = reader.ReadLine();
+
+                        if(line != null)
+                        {
+                            thisList.Add(line);
+                        }
+
+                    } while(line != null);
+                }
+            }
+
+            return thisList;
+        }
+
+        /// <summary>
+        /// Populates the LocationBox
+        /// </summary>
+        /// <param name="thisList"></param>
+        private void PopulateLocationBox(List<string> thisList)
+        {
+            LocationBox.Text = "";
+
+            if(thisList != null)
+            {
+                int i = thisList.Count;
+                int j = 0;
+
+                foreach(string line in thisList)
+                {
+                    j++;
+
+                    if(i != j)
+                        LocationBox.Text += line + Environment.NewLine;
+                    else
+                        LocationBox.Text += line;
                 }
             }
         }

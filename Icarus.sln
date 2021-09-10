@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Icarus\Data.csproj"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{F7643455-F6FA-4450-BB59-E9ECD37099CB}"
 	ProjectSection(SolutionItems) = preProject
+		Documents\AisleList.txt = Documents\AisleList.txt
 		Documents\Items.json = Documents\Items.json
 	EndProjectSection
 EndProject
