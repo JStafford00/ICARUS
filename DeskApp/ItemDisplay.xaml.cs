@@ -62,6 +62,9 @@ namespace DeskApp
             }
         }
 
+        /// <summary>
+        /// Populates the Aisle list for LocationBox
+        /// </summary>
         private void PopulateAisleList()
         {
             string[] aisleArray = File.ReadAllLines(@"C:\Users\Admin\source\repos\Icarus\Documents\AisleList.txt");

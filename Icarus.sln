@@ -16,6 +16,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskApp", "DeskApp\DeskApp.
 		{7752F4C0-673D-4000-B22F-1A88CBBCD65C} = {7752F4C0-673D-4000-B22F-1A88CBBCD65C}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTests", "DataTests\DataTests.csproj", "{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{FFECB231-A026-47A3-974E-5D0E271F49FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFECB231-A026-47A3-974E-5D0E271F49FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFECB231-A026-47A3-974E-5D0E271F49FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
