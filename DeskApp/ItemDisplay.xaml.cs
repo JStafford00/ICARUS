@@ -45,7 +45,7 @@ namespace DeskApp
 
             try
             {
-                json = File.ReadAllText(@"C:\Users\Admin\source\repos\Icarus\Documents\Items.json");
+                json = File.ReadAllText(@"C:\Users\Admin\source\repos\Icarus\Documents\StressTest.json");
             }
 
             catch(Exception)
@@ -555,7 +555,7 @@ namespace DeskApp
 
             try
             {
-                File.WriteAllText(@"C:\Users\Admin\source\repos\Icarus\Documents\Items.json", json);
+                File.WriteAllText(@"C:\Users\Admin\source\repos\Icarus\Documents\StressTest.json", json);
             }
 
             catch(Exception)

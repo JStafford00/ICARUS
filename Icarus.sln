@@ -8,7 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{F7643455-F6FA-4450-BB59-E9ECD37099CB}"
 	ProjectSection(SolutionItems) = preProject
 		Documents\AisleList.txt = Documents\AisleList.txt
+		Documents\ICARUSData.db = Documents\ICARUSData.db
 		Documents\Items.json = Documents\Items.json
+		Documents\StressTest.json = Documents\StressTest.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskApp", "DeskApp\DeskApp.csproj", "{FFECB231-A026-47A3-974E-5D0E271F49FF}"
@@ -16,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskApp", "DeskApp\DeskApp.
 		{7752F4C0-673D-4000-B22F-1A88CBBCD65C} = {7752F4C0-673D-4000-B22F-1A88CBBCD65C}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTests", "DataTests\DataTests.csproj", "{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTests", "DataTests\DataTests.csproj", "{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogBuilder", "CatalogBuilder\CatalogBuilder.csproj", "{63E78BFC-6310-49F6-9D06-AEF836F83F90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +40,10 @@ Global
 		{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4015DF02-81CA-4A83-8D86-50E9D3CAA39A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63E78BFC-6310-49F6-9D06-AEF836F83F90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63E78BFC-6310-49F6-9D06-AEF836F83F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63E78BFC-6310-49F6-9D06-AEF836F83F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63E78BFC-6310-49F6-9D06-AEF836F83F90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

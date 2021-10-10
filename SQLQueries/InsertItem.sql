@@ -1,0 +1,20 @@
+CREATE TABLE "Catalog" (
+	"Sku"	INTEGER NOT NULL UNIQUE,
+	"Name"	TEXT NOT NULL,
+	"OverallQuantity"	INTEGER NOT NULL,
+	"SFQuantity"	INTEGER NOT NULL,
+	"OSQuantity"	INTEGER NOT NULL,
+	"PPQuantity"	INTEGER NOT NULL,
+	"MaxSF"	INTEGER NOT NULL,
+	"DateRecieved"	TEXT,
+	"DateInventoried"	TEXT,
+	"InventoriedTM"	TEXT,
+	"LocationStocked"	TEXT,
+	"DepartmentID"	INTEGER,
+	"DepartmentName"	TEXT,
+	"Category"	TEXT,
+	"Vendors"	TEXT,
+	CHECK(length(Sku) == 7),
+	CHECK(length(Name) <= 30),
+	PRIMARY KEY("Sku")
+) WITHOUT ROWID

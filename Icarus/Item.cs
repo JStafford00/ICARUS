@@ -76,11 +76,6 @@ namespace Icarus.Data
             {
                 return overallQuantity;
             }
-
-            set
-            {
-                overallQuantity = value;
-            }
         }
 
         /// <summary>
@@ -96,6 +91,7 @@ namespace Icarus.Data
             set
             {
                 salesFloorQuantity = value;
+                overallQuantity = salesFloorQuantity + overstockQuantity;
             }
         }
 
@@ -112,6 +108,7 @@ namespace Icarus.Data
             set
             {
                 overstockQuantity = value;
+                overallQuantity = salesFloorQuantity + overstockQuantity;
             }
         }
 
