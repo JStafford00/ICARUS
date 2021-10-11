@@ -5,3 +5,4 @@ Original Author: Jordan Stafford
 Releases:
 
 1.0.0: Released the original Item Display Screen.
+1.1.0: SQL database support for Catalog.
