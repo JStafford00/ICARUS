@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 	ProjectSection(SolutionItems) = preProject
 		Documents\AisleList.txt = Documents\AisleList.txt
 		Documents\ICARUSData.db = Documents\ICARUSData.db
-		Documents\Items.json = Documents\Items.json
-		Documents\StressTest.json = Documents\StressTest.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeskApp", "DeskApp\DeskApp.csproj", "{FFECB231-A026-47A3-974E-5D0E271F49FF}"

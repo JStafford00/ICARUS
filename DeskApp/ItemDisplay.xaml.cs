@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -15,6 +16,7 @@ using System.IO;
 using Icarus.Data;
 using Newtonsoft.Json;
 using System.Linq;
+using Microsoft.Data.Sqlite;
 
 namespace DeskApp
 {
@@ -27,7 +29,6 @@ namespace DeskApp
     {
         private Catalog thisCatalog = new Catalog();
         private List<Aisle> aisleList = new List<Aisle>();
-        private object prevListviewItem;
 
         public ItemDisplay()
         {
@@ -41,23 +42,70 @@ namespace DeskApp
         /// </summary>
         private void PopulateList()
         {
-            string json = "";
+
+            var connectionStringBuilder = new SqliteConnectionStringBuilder();
+            connectionStringBuilder.DataSource = @"C:\Users\Admin\source\repos\Icarus\Documents\ICARUSData.db";
+
+            
 
             try
             {
-                json = File.ReadAllText(@"C:\Users\Admin\source\repos\Icarus\Documents\StressTest.json");
+                using(var connection = new SqliteConnection(connectionStringBuilder.ConnectionString))
+                {
+                    connection.Open();
+
+                    using(var transaction = connection.BeginTransaction())
+                    {
+                        var selectCmd = connection.CreateCommand();
+
+                        selectCmd.CommandText = @"SELECT * FROM Catalog";
+
+                        var reader = selectCmd.ExecuteReader();
+
+                        while(reader.Read())
+                        {
+                            object[] data = new object[15];
+                            Item item = new Item();
+
+                            reader.GetValues(data);
+
+                            item.Sku = (int)(long)data[0];
+                            item.Name = data[1].ToString();
+                            item.SalesFloorQuantity = (int)(long)data[3];
+                            item.OverstockQuantity = (int)(long)data[4];
+                            item.PrepaidQuantity = (int)(long)data[5];
+                            item.MaxSalesFloor = (int)(long)data[6];
+                            item.DateRecieved = DateTime.Parse(data[7].ToString());
+                            item.DateInventoried = DateTime.Parse(data[8].ToString());
+                            item.InventoriedTeamMember = data[9].ToString();
+
+                            foreach(string aisle in (data[10].ToString()).Split(", "))
+                            {
+                                item.LocationStocked.Add(aisle);
+                            }
+
+                            item.DepartmentID = (int)(long)data[11];
+                            item.DepartmentName = data[12].ToString();
+                            item.Catagory = data[13].ToString();
+
+                            foreach(string vendor in (data[14].ToString()).Split(", "))
+                            {
+                                item.Vendors.Add(vendor);
+                            }
+
+                            thisCatalog.Add(item);
+                        }
+                    }
+                }
             }
 
             catch(Exception)
             {
-                MessageBox.Show("Failed to load file Items.json. File directory does not exist.");
+                MessageBox.Show("Failed to load Catalog. Data Corrupted.");
             }
 
             finally
             {
-                if(json != "")
-                    thisCatalog.SetList(JsonConvert.DeserializeObject<List<Item>>(json));
-
                 this.DataContext = thisCatalog;
             }
         }
